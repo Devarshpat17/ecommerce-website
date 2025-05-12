@@ -1,0 +1,55 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.form-control, .form-select {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Alert customization */
+.alert {
+    border-radius: 5px;
+}
+
+/* Button styling */
+.btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-footer .btn {
+        margin-bottom: 5px;
+    }
+    
+    .card-footer .d-flex {
+        flex-direction: column;
+    }
+}
+
+/* Product media styling */
+.product-media {
+    max-height: 200px;
+    object-fit: cover;
+}

@@ -1,0 +1,25 @@
+.product-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.no-image-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6c757d;
+    color: white;
+}
+
+.delete-confirm-image {
+    max-height: 150px;
+}
+
+.form-preview-image {
+    max-height: 100px;
+}
+
+.product-detail-image {
+    max-width: 300px;
+} 

@@ -1,0 +1,57 @@
+<!-- create_product.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Create New Product{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="my-4">Create New Product</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Product Name</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_price">Price</label>
+                {{ form.price }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_description">Description</label>
+                {{ form.description }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_stock">Stock</label>
+                {{ form.stock }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_image">Image</label>
+                {{ form.image }}
+                <small class="form-text text-muted">Upload an image of the product.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="id_video">Video</label>
+                {{ form.video }}
+                <small class="form-text text-muted">Upload a product video (optional).</small>
+            </div>
+
+            <!-- Display form errors, if any -->
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Save Product</button>
+        </form>
+    </div>
+{% endblock %}

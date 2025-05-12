@@ -1,0 +1,18 @@
+<!-- filepath: c:\Users\hp\myworld\ecommerce-site\store\templates\store\profile.html -->
+{% extends 'store/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Profile</h1>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="Avatar" class="img-thumbnail" width="150">
+    {% else %}
+        <p>No avatar uploaded.</p>
+    {% endif %}
+</div>
+{% endblock %}

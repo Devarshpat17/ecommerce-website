@@ -1,0 +1,124 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-5px);
+}
+
+.auth-form-box {
+    padding: 1.5rem;
+}
+
+.auth-form-box .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form-box label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.auth-form-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.auth-form-box input:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    outline: 0;
+    transform: scale(1.02);
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.auth-form-box .btn-primary {
+    padding: 0.75rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    background-color: #0d6efd;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-form-box .btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.05);
+}
+
+.auth-form-box .form-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.auth-form-box .errorlist {
+    color: #dc3545;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.auth-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.auth-links a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #6c757d;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.auth-divider span {
+    padding: 0 1rem;
+}
+
+.social-login button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-login button:hover {
+    transform: scale(1.03);
+}

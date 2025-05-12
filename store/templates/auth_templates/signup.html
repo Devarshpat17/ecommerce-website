@@ -1,0 +1,16 @@
+{% extends 'auth_templates/auth_base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block heading %}Create an Account{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+</form>
+<p class="text-center mt-3">
+    Already have an account? <a href="{% url 'store:login' %}">Login here</a>
+</p>
+{% endblock %}
