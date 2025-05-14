@@ -24,6 +24,9 @@ urlpatterns = [
     path('', include('store.urls', namespace='store')),  # Use only once, with namespace
     path('custom-admin/orders/', views.admin_orders, name='admin_orders'),
 
+    # Include API app URLs
+    
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

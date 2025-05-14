@@ -1,33 +1,18 @@
-/* General Styles */
+/* General body styling */
 body {
+    background-color: #000; /* Black background */
+    color: #e0e0e0; /* Light gray text for readability */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
 }
 
-/* Card hover effect */
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Links and buttons */
+a {
+    color: #00bcd4; /* Cyan for links */
+    text-decoration: none;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Form styling */
-.form-control, .form-select {
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-/* Alert customization */
-.alert {
-    border-radius: 5px;
+a:hover {
+    color: #ff4081; /* Pink for hover effect */
 }
 
 /* Button styling */
@@ -35,6 +20,75 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #00bcd4; /* Cyan button */
+    border-color: #00bcd4;
+    color: #000; /* Black text */
+}
+
+.btn-primary:hover {
+    background-color: #ff4081; /* Pink hover effect */
+    border-color: #ff4081;
+}
+
+.btn-outline-success {
+    border-color: #4caf50; /* Green border */
+    color: #4caf50; /* Green text */
+}
+
+.btn-outline-success:hover {
+    background-color: #4caf50; /* Green background */
+    color: #000; /* Black text */
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #121212; /* Dark gray for cards */
+    border: 1px solid #333; /* Subtle border */
+    color: #e0e0e0; /* Light gray text */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    color: #ffeb3b; /* Yellow for titles */
+}
+
+.card-text {
+    color: #b0bec5; /* Muted blue-gray for text */
+}
+
+/* Form styling */
+.form-control, .form-select {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1e1e1e; /* Darker gray for inputs */
+    color: #e0e0e0; /* Light gray text */
+    border: 1px solid #333; /* Subtle border */
+}
+
+input:focus, select:focus {
+    border-color: #00bcd4; /* Cyan focus effect */
+    outline: none;
+}
+
+/* Product media styling */
+.product-media {
+    max-height: 200px;
+    object-fit: cover;
+    border: 2px solid #333; /* Subtle border for media */
+    border-radius: 5px;
+}
+
+/* Empty product message */
+.text-muted {
+    color: #757575; /* Muted gray for empty message */
 }
 
 /* Responsive adjustments */
@@ -46,10 +100,4 @@ body {
     .card-footer .d-flex {
         flex-direction: column;
     }
-}
-
-/* Product media styling */
-.product-media {
-    max-height: 200px;
-    object-fit: cover;
 }
