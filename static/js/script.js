@@ -34,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (img) {
                             img.src = e.target.result;
                         } else {
-                            previewContainer.innerHTML = '<small>New image preview:</small><br>' + 
-                                '<img src="' + e.target.result + '" class="img-thumbnail mt-1" style="max-height: 100px;">';
+                            previewContainer.innerHTML = `<small>New image preview:</small><br><img src="${e.target.result}" class="img-thumbnail mt-1" style="max-height: 100px;" alt="Preview of selected product image displayed as a thumbnail above the text New image preview. The image is shown in a simple interface for uploading product photos in an online store.">`;
                         }
                     }
                 };
