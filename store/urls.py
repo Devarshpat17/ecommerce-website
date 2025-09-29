@@ -1,6 +1,7 @@
 # store/urls.py
 from django.urls import path
 from . import views
+from .views import export_admin_data
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -37,6 +38,11 @@ urlpatterns = [
     # Profile URL
     path('profile/', views.profile, name='profile'),  # Add this line
     path('profile/edit/', views.edit_profile, name='edit_profile'),  # Add this line
+
+    # Data export URLs
+    path('export-data/', views.export_data, name='export_data'),
+    path('export-admin-data/', views.export_admin_data, name='export_admin_data'),
+    path('api/export-admin-data/', export_admin_data, name='export_admin_data'),
 ]
 
 if settings.DEBUG:

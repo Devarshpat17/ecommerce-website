@@ -11,6 +11,13 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
+import openpyxl
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAdminUser
+from .serializers import UserSerializer, ProductSerializer, OrderSerializer
 
 def login(request):
     if request.method == 'POST':
@@ -208,5 +215,42 @@ def checkout(request):
 def admin_orders(request):
     orders = Order.objects.all().order_by('-created_at')
     return render(request, 'store/admin_orders.html', {'orders': orders})
+
+def export_data(request):
+    # Create a workbook and worksheet
+    workbook = openpyxl.Workbook()
+    sheet = workbook.active
+    sheet.title = "Products"
+
+    # Add headers to the worksheet
+    headers = ['ID', 'Name', 'Price', 'Stock']
+    sheet.append(headers)
+
+    # Fetch data from the database
+    products = Product.objects.all()
+    for product in products:
+        sheet.append([product.id, product.name, product.price, product.stock])
+
+    # Create an HTTP response with the Excel file
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
+    response['Content-Disposition'] = 'attachment; filename=products.xlsx'
+    workbook.save(response)
+    return response
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def export_admin_data(request):
+    users = User.objects.all()
+    products = Product.objects.all()
+    orders = Order.objects.all()
+
+    data = {
+        'users': UserSerializer(users, many=True).data,
+        'products': ProductSerializer(products, many=True).data,
+        'orders': OrderSerializer(orders, many=True).data,
+    }
+    return Response(data)
 
 
